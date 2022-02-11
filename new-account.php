@@ -27,7 +27,12 @@ if ($valid) {
 
     // close database connection
     $mysqli->close();
+
+    // redirect to sign in page
+    header('location:sign-in.html');
+    exit(0);
 } else {
     echo '<p>Invalid entry. Account not created.</p>';
+    echo '<p><a href="new-account.html">Back</a></p>';
 }
 
