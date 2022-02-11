@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Feb 07, 2022 at 03:14 AM
+-- Generation Time: Feb 11, 2022 at 02:26 AM
 -- Server version: 10.5.12-MariaDB-0+deb11u1
 -- PHP Version: 7.4.25
 
@@ -32,7 +32,7 @@ CREATE TABLE `users` (
   `username` varchar(120) NOT NULL,
   `email` varchar(120) NOT NULL,
   `password` varchar(120) NOT NULL,
-  `salt` varchar(120) NOT NULL
+  `salt` varchar(120) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -43,7 +43,8 @@ CREATE TABLE `users` (
 -- Indexes for table `users`
 --
 ALTER TABLE `users`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `username` (`username`);
 
 --
 -- AUTO_INCREMENT for dumped tables
