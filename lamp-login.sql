@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Feb 11, 2022 at 02:26 AM
+-- Generation Time: Feb 11, 2022 at 09:07 PM
 -- Server version: 10.5.12-MariaDB-0+deb11u1
 -- PHP Version: 7.4.25
 
@@ -29,10 +29,9 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `users` (
   `id` int(10) UNSIGNED NOT NULL,
-  `username` varchar(120) NOT NULL,
-  `email` varchar(120) NOT NULL,
-  `password` varchar(120) NOT NULL,
-  `salt` varchar(120) DEFAULT NULL
+  `username` varchar(320) NOT NULL,
+  `email` varchar(320) NOT NULL,
+  `password` char(60) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --

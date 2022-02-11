@@ -17,7 +17,10 @@ if ($valid) {
     // get user input & escape special characters
     $username = $mysqli->real_escape_string($_POST['username']);
     $email = $mysqli->real_escape_string($_POST['email']);
-    $password = $mysqli->real_escape_string($_POST['password']);
+    $password = password_hash(
+            $mysqli->real_escape_string($_POST['password']),
+            PASSWORD_BCRYPT
+            );
 
     // add new user to database
     $mysqli->query(
