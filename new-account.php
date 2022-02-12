@@ -2,8 +2,10 @@
 
 // check if entry is valid
 $valid = true;
-foreach ($_POST as $input) {
-    if (empty($input)) {
+// TODO: check formatting of inputs
+$input_names = array('username', 'email', 'password');
+foreach ($input_names as $input_name) {
+    if (empty($_POST[$input_name])) {
         $valid = false;
         break;
     }
