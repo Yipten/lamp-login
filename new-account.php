@@ -19,10 +19,9 @@ if ($valid) {
     // get user input & escape special characters
     $username = $mysqli->real_escape_string($_POST['username']);
     $email = $mysqli->real_escape_string($_POST['email']);
-    $password = password_hash(
-            $mysqli->real_escape_string($_POST['password']),
-            PASSWORD_BCRYPT
-            );
+    $password =
+        password_hash($mysqli->real_escape_string($_POST['password']),
+                PASSWORD_BCRYPT);
 
     // add new user to database
     $mysqli->query(
@@ -35,9 +34,10 @@ if ($valid) {
 
     // redirect to sign in page
     header('location:sign-in.html');
-    exit(0);
 } else {
     echo '<p>Invalid entry. Account not created.</p>';
     echo '<p><a href="new-account.html">Back</a></p>';
 }
+
+exit(0);
 
